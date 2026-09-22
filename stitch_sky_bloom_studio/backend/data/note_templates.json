@@ -1,0 +1,34 @@
+[
+  {
+    "id": "minimalist",
+    "name": "Minimalist Ivory",
+    "styleClass": "card-minimalist",
+    "badge": "CLASSIC",
+    "font": "font-sans-card",
+    "textColor": "text-on-surface"
+  },
+  {
+    "id": "floral",
+    "name": "Botanical Frosted",
+    "styleClass": "card-floral",
+    "badge": "SIGNATURE",
+    "font": "font-cormorant",
+    "textColor": "text-on-surface"
+  },
+  {
+    "id": "sky",
+    "name": "Azure Sky",
+    "styleClass": "card-sky",
+    "badge": "STUDIO SPECIAL",
+    "font": "font-playfair",
+    "textColor": "text-primary"
+  },
+  {
+    "id": "celestial",
+    "name": "Midnight Azure",
+    "styleClass": "card-celestial",
+    "badge": "LUXE",
+    "font": "font-cormorant",
+    "textColor": "text-primary-fixed"
+  }
+]

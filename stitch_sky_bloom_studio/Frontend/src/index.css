@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-sans;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+.sky-glow {
+  box-shadow: 0 32px 64px -12px rgba(26, 43, 60, 0.05);
+}
+
+.hero-img-clip {
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom fonts for gift notes */
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+.font-cormorant {
+  font-family: 'Cormorant Garamond', serif;
+}
+.font-sans-card {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Material Symbols configuration */
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 1;
+}
+
+.material-symbols-outlined.fill-1 {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+/* Note card textures */
+.card-minimalist {
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+}
+
+.card-floral {
+  background-image: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,255,255,0.85)), url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=800&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #e2e2e2;
+}
+
+.card-sky {
+  background-color: #F0F9FF;
+  background-image: radial-gradient(#c1e8ff 1px, transparent 1px);
+  background-size: 16px 16px;
+  border: 1px solid #c1e8ff;
+}
+
+.card-celestial {
+  background: linear-gradient(145deg, #0b1d2d 0%, #1a324b 100%);
+  color: #c1e8ff;
+  border: 1px solid #2f647d;
+}

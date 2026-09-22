@@ -1,0 +1,65 @@
+[
+  {
+    "id": "ord-1788842359813-qftz9",
+    "orderNumber": "FL-310931",
+    "status": "confirmed",
+    "statusHistory": [
+      {
+        "status": "confirmed",
+        "timestamp": "2026-09-08T04:39:19.813Z",
+        "note": "Order placed & payment verified"
+      },
+      {
+        "status": "atelier_queue",
+        "timestamp": "2026-09-08T04:39:19.813Z",
+        "note": "Fresh stems allocated from greenhouse cold storage"
+      }
+    ],
+    "items": [
+      {
+        "id": "cloud-blue-hydrangea",
+        "name": "Cloud Blue Hydrangea",
+        "price": 68,
+        "quantity": 1,
+        "selectedOption": null,
+        "includeVase": false,
+        "isSubscription": false,
+        "image": null
+      }
+    ],
+    "pricing": {
+      "subtotal": 68,
+      "discountPercent": 0.1,
+      "discountAmount": 6.8,
+      "promoCode": "FLORA10",
+      "shippingFee": 15,
+      "estimatedTax": 4.9,
+      "total": 81.1
+    },
+    "deliveryDetails": {
+      "recipientName": "Genevieve Dupond",
+      "streetAddress": "742 Evergreen Terrace",
+      "apt": "",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94107",
+      "phone": "+1 (555) 234-5678",
+      "deliverySlot": "morning",
+      "instructions": "",
+      "estimatedDeliveryDate": "2026-09-10"
+    },
+    "giftNote": {
+      "recipient": "Genevieve",
+      "message": "May these blooms bring serenity to your home.",
+      "sender": "Julian",
+      "templateId": "minimalist",
+      "waxSealId": "sky-bloom"
+    },
+    "payment": {
+      "method": "card",
+      "status": "paid",
+      "transactionId": "TXN-C5VO83N0"
+    },
+    "createdAt": "2026-09-08T04:39:19.813Z"
+  }
+]

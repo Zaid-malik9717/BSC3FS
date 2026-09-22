@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout | FLORA EDITIONS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e2e2e2",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#0b1d2d",
+                        "on-tertiary-container": "#586166",
+                        "on-secondary-fixed-variant": "#38485a",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "on-primary-fixed-variant": "#0f4c64",
+                        "surface-dim": "#dadada",
+                        "primary-fixed": "#c1e8ff",
+                        "on-background": "#1a1c1c",
+                        "surface": "#f9f9f9",
+                        "secondary-fixed-dim": "#b7c8de",
+                        "error": "#ba1a1a",
+                        "surface-container": "#eeeeee",
+                        "secondary": "#4f6073",
+                        "on-error-container": "#93000a",
+                        "outline": "#71787d",
+                        "surface-tint": "#2f647d",
+                        "on-primary-container": "#30667e",
+                        "inverse-primary": "#9acdea",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#d2e4fb",
+                        "on-surface-variant": "#41484c",
+                        "background": "#f9f9f9",
+                        "tertiary-fixed": "#dbe4ea",
+                        "on-tertiary-fixed": "#141d21",
+                        "surface-container-high": "#e8e8e8",
+                        "outline-variant": "#c0c7cd",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#9acdea",
+                        "on-surface": "#1a1c1c",
+                        "on-tertiary-fixed-variant": "#3f484d",
+                        "tertiary": "#576065",
+                        "on-primary-fixed": "#001e2b",
+                        "inverse-on-surface": "#f0f1f1",
+                        "inverse-surface": "#2f3131",
+                        "secondary-fixed": "#d2e4fb",
+                        "tertiary-container": "#d3dce2",
+                        "primary-container": "#aee2ff",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f3f3f4",
+                        "on-secondary-container": "#556679",
+                        "tertiary-fixed-dim": "#bfc8ce",
+                        "primary": "#2f647d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "section-gap": "120px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .glass-panel { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(255, 255, 255, 0.5); }
+        .soft-shadow { box-shadow: 0 32px 64px -12px rgba(26, 43, 60, 0.05); }
+        .input-field { background-color: theme('colors.surface'); border: 1px solid theme('colors.surface-variant'); border-radius: theme('borderRadius.DEFAULT'); transition: all 0.3s ease; }
+        .input-field:focus { border-color: theme('colors.primary-container'); outline: none; box-shadow: 0 0 0 4px rgba(174, 226, 255, 0.2); }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col pt-[88px]">
+<!-- Header / Brand Anchor (Simplified for transactional intent) -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-surface/80 backdrop-blur-xl shadow-[0_32px_64px_-12px_rgba(26,43,60,0.05)] transition-all duration-300 ease-out flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto left-0 right-0">
+<a class="font-display-lg text-display-lg-mobile md:text-display-lg tracking-tighter text-primary dark:text-primary-fixed-dim" href="/">FLORA</a>
+<div class="flex items-center gap-2 font-label-caps text-label-caps text-on-surface-variant">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">lock</span>
+            SECURE CHECKOUT
+        </div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Checkout Forms -->
+<div class="lg:col-span-7 xl:col-span-8 flex flex-col gap-12">
+<!-- Progress Tracker -->
+<nav aria-label="Progress">
+<ol class="flex items-center" role="list">
+<li class="relative pr-8 sm:pr-20">
+<div aria-hidden="true" class="absolute inset-0 flex items-center">
+<div class="h-0.5 w-full bg-primary-container"></div>
+</div>
+<a class="relative flex h-8 w-8 items-center justify-center rounded-full bg-primary hover:bg-primary/90" href="#">
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+</a>
+</li>
+<li class="relative pr-8 sm:pr-20">
+<div aria-hidden="true" class="absolute inset-0 flex items-center">
+<div class="h-0.5 w-full bg-surface-variant"></div>
+</div>
+<a class="relative flex h-8 w-8 items-center justify-center rounded-full bg-primary ring-4 ring-primary-container" href="#">
+<span class="text-white text-sm font-semibold">2</span>
+</a>
+</li>
+<li class="relative">
+<a class="relative flex h-8 w-8 items-center justify-center rounded-full bg-surface-container-high border-2 border-surface-variant hover:border-outline" href="#">
+<span class="text-on-surface-variant text-sm font-semibold">3</span>
+</a>
+</li>
+</ol>
+</nav>
+<!-- Section: Delivery Details -->
+<section class="flex flex-col gap-8">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-background mb-2">Delivery Details</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Where should we send these beautiful blooms?</p>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="md:col-span-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2" for="recipient_name">RECIPIENT NAME</label>
+<input class="input-field w-full px-4 py-3 font-body-md text-body-md" id="recipient_name" placeholder="Enter full name" type="text"/>
+</div>
+<div class="md:col-span-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2" for="street_address">STREET ADDRESS</label>
+<input class="input-field w-full px-4 py-3 font-body-md text-body-md" id="street_address" placeholder="123 Main St, Apt 4B" type="text"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2" for="city">CITY</label>
+<input class="input-field w-full px-4 py-3 font-body-md text-body-md" id="city" placeholder="New York" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2" for="state">STATE</label>
+<select class="input-field w-full px-4 py-3 font-body-md text-body-md text-on-background bg-white" id="state">
+<option>NY</option>
+<option>CA</option>
+<option>TX</option>
+</select>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2" for="zip">ZIP CODE</label>
+<input class="input-field w-full px-4 py-3 font-body-md text-body-md" id="zip" placeholder="10001" type="text"/>
+</div>
+</div>
+</form>
+</section>
+<hr class="border-surface-variant"/>
+<!-- Section: Date & Time -->
+<section class="flex flex-col gap-8">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-background mb-2">Delivery Date &amp; Time</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Select when you want them to arrive.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Date Picker Placeholder -->
+<div class="relative">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2" for="date">DATE</label>
+<div class="relative">
+<input class="input-field w-full pl-12 pr-4 py-3 font-body-md text-body-md cursor-pointer" id="date" type="date"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">calendar_today</span>
+</div>
+</div>
+<!-- Time Selector -->
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2" for="time">TIME WINDOW</label>
+<select class="input-field w-full px-4 py-3 font-body-md text-body-md text-on-background bg-white" id="time">
+<option>Morning (9am - 12pm)</option>
+<option>Afternoon (12pm - 5pm)</option>
+</select>
+</div>
+</div>
+</section>
+<hr class="border-surface-variant"/>
+<!-- Section: Payment (Minimal) -->
+<section class="flex flex-col gap-8">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-background mb-2">Payment</h2>
+</div>
+<div class="input-field p-6 bg-surface-bright flex flex-col gap-4 relative overflow-hidden">
+<!-- Decorative blur -->
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary-container rounded-full blur-3xl opacity-20"></div>
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-primary">credit_card</span>
+<span class="font-body-lg text-body-lg text-on-background">Credit Card</span>
+</div>
+<div>
+<input class="input-field w-full px-4 py-3 font-body-md text-body-md font-mono" placeholder="Card Number (4444 4444 4444 4444)" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<input class="input-field w-full px-4 py-3 font-body-md text-body-md" placeholder="MM/YY" type="text"/>
+<input class="input-field w-full px-4 py-3 font-body-md text-body-md" placeholder="CVC" type="text"/>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Order Summary (Sticky) -->
+<div class="lg:col-span-5 xl:col-span-4 mt-12 lg:mt-0">
+<div class="sticky top-32 glass-panel rounded-xl p-8 soft-shadow flex flex-col gap-8">
+<h3 class="font-headline-sm text-headline-sm text-on-background">Order Summary</h3>
+<!-- Product Preview -->
+<div class="flex gap-4 items-center">
+<div class="w-24 h-24 rounded-lg overflow-hidden bg-surface-container-low shrink-0">
+<img class="w-full h-full object-cover" data-alt="A close-up, high-quality photograph of a minimalist floral arrangement featuring white peonies and pale blue delphiniums in a clear glass vase, set against a bright, airy studio background with natural light casting soft shadows, conveying a premium, elegant, and fresh aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxULCOan_hQbL9XLoGyn3vHF7m2dqkW0ZhyO_P5B6Ak76lJhLJCGOri-bmmBXfqqGUpAVOvhWAMJCl6PknB0FF88qGLUBYqITaRvvHohaF3uZbu8gqM_YFizMIgEoABCkXdnInmrxbcN-2vlU6BR8Bnx4_yNM4dsQHse0wyVwBYaDTTbQmS9542vKQcADMyaiPjbbxJsHvrhCRAfwlaumZwMU9z_ULtXcCWBQmRQqTr8bprg9Iec9JUg"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-background text-lg leading-tight">The Cloud Nine</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Signature Size</span>
+<span class="font-body-lg text-body-lg text-primary mt-1">$125.00</span>
+</div>
+</div>
+<!-- Gift Note Preview -->
+<div class="bg-primary-container/20 p-4 rounded-lg border border-primary-container/30 relative">
+<span class="material-symbols-outlined absolute top-4 right-4 text-primary/50 text-xl">edit_note</span>
+<p class="font-label-caps text-label-caps text-primary mb-1">GIFT NOTE</p>
+<p class="font-body-md text-body-md text-on-background italic">"Happy Birthday, Sarah! Wishing you a day as beautiful as these blooms. Love, Mark."</p>
+</div>
+<hr class="border-surface-variant border-dashed"/>
+<!-- Pricing Breakdown -->
+<div class="flex flex-col gap-3 font-body-md text-body-md">
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal</span>
+<span>$125.00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Delivery</span>
+<span>$15.00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Tax</span>
+<span>$11.20</span>
+</div>
+<div class="flex justify-between font-headline-sm text-headline-sm text-on-background mt-4 pt-4 border-t border-surface-variant">
+<span>Total</span>
+<span>$151.20</span>
+</div>
+</div>
+<!-- Large CTA -->
+<button class="w-full py-4 rounded-full bg-primary-container hover:bg-[#99d6fb] text-on-primary-fixed font-headline-sm text-headline-sm text-lg transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-sm flex justify-center items-center gap-2">
+                    Place Order <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer (Suppressed based on linear/transactional intent rule, keeping canvas focused) -->
+<!-- Navigation Shell (BottomNavBar/SideNav) suppressed per The "Destination" Rule for Checkout -->
+</body></html>

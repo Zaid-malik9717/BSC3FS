@@ -1,0 +1,118 @@
+{
+  "flowerTypes": [
+    {
+      "id": "hydrangea",
+      "name": "Cloud Hydrangea",
+      "price": 18,
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBWI4Vo8oRg7rd-7CtB5rdh7CkKZYSQmOiJANdTSxZKS1HDw5LxVkUnaCWZsEzXnIFVXeIviJNloMX5f3AkxpX2ErR6dbEOeC7Evu1Tp9Cn4_wY6izn9jSQ6Of2ozzORakLjY5TWe7Bfxu5fGkRi06w5rB_dZrNtdfEgDN4jW39FfuStfaSnwFGGu9KH3l51dui1RvOt7MfxFFQ4m_Uw4olhFON48v6QIJzfe6ChjTS2wk1J61Aud3VUg",
+      "description": "Voluminous, romantic clusters"
+    },
+    {
+      "id": "peony",
+      "name": "Celestial Peony",
+      "price": 20,
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAr4yzZ3g7U1kk9bm8XFyqLvvXVul08-jww8rWH13IksZDdxAlzJlXH3fFDU11lKxoMR3y63jfKEjxhgYjmp66BXFOvp0ExBaOzr-XYiAFPxC83dzh131UDUpTMSRB-Dn3CA5J67ohvYqLL8EA0MmVor1-MLlHZ_IAm8s_UllqxnS3cC8qqyXls_lDX0_QNJuT13FuT79_ApxWlNTzWy4_EMWzsKAwGF-xdECeC2VGABSZ9wc5gbME9uw",
+      "description": "Lush multi-layered petals"
+    },
+    {
+      "id": "anthurium",
+      "name": "Modern Anthurium",
+      "price": 16,
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCtLDaXCHaozG8AlKPryXRI4HmUu3dt2kcGh1QhL3G9mZ1-lSaajQMl2S25ihA_5JVfdIExz0MHUnoc_k5nRmFd8s-bjcYNmaXsIfqzS7jm0aL7AHI51GxLqi3p5U-jLKAxNUlIfJTA829nuIRonDQbZHzBzie0aU_M0shQZjQkBGAQ6nYas_3H3u7IrIvq8ABCR4M8DgDXJz3qVacF4JT_ulGx1bFUVEhnhvuULJGMd_CK_ippyZiHFg",
+      "description": "Architectural & pollen-free"
+    },
+    {
+      "id": "lily",
+      "name": "Scented Lily",
+      "price": 17,
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC-o5r4YP_h4VnSZ3X9AsZYHnkt7YkYwi-hXmGWaMn1kzdAFrflrYsISeRSH83b3YUkIrf_-diHnxqp5jZ7g9oqpsLEPWp8qc4Es4Oud49zPIxzGmUSXKY107qpAm0Ri_5GMzzSE2BzGqyiA6UDKtzRgeyJFxHrE7dZGsb-qG5SvQ_JvnajOkw90iwnnxqopT4b69QkVWcpTDOAaicNli6qAh8PjOOF6zlT-lB1b5F9mWRPiexQuMADsA",
+      "description": "Aromatic grand petals"
+    }
+  ],
+  "colors": [
+    {
+      "id": "sky-blue",
+      "name": "Sky & Periwinkle",
+      "hex": "#aee2ff",
+      "bgClass": "bg-[#aee2ff]"
+    },
+    {
+      "id": "pure-white",
+      "name": "Pure Ivory White",
+      "hex": "#ffffff",
+      "bgClass": "bg-white border border-outline-variant"
+    },
+    {
+      "id": "soft-blush",
+      "name": "Blush Champagne",
+      "hex": "#fce7f3",
+      "bgClass": "bg-[#fce7f3]"
+    },
+    {
+      "id": "lavender-mist",
+      "name": "Lavender Mist",
+      "hex": "#e9d5ff",
+      "bgClass": "bg-[#e9d5ff]"
+    }
+  ],
+  "sizes": [
+    {
+      "id": "petite",
+      "name": "Petite Edition",
+      "stems": "6-8 Stems",
+      "multiplier": 1,
+      "description": "Delicate and intimate for bedside or coffee tables"
+    },
+    {
+      "id": "signature",
+      "name": "Signature Edition",
+      "stems": "12-14 Stems",
+      "multiplier": 1.5,
+      "description": "Our iconic full arrangement balance"
+    },
+    {
+      "id": "grand",
+      "name": "Grand Edition",
+      "stems": "18-22 Stems",
+      "multiplier": 2.1,
+      "description": "Showstopping statement centerpiece"
+    }
+  ],
+  "wraps": [
+    {
+      "id": "linen-sky",
+      "name": "Matte Sky Kraft",
+      "color": "#d2e4fb",
+      "extraPrice": 0
+    },
+    {
+      "id": "crisp-white",
+      "name": "Textured Parchment White",
+      "color": "#ffffff",
+      "extraPrice": 0
+    },
+    {
+      "id": "noir-slate",
+      "name": "Editorial Slate Noir",
+      "color": "#38485a",
+      "extraPrice": 5
+    }
+  ],
+  "ribbons": [
+    {
+      "id": "silk-sky",
+      "name": "Sky Blue Raw Silk",
+      "extraPrice": 0
+    },
+    {
+      "id": "velvet-navy",
+      "name": "Deep Azure Velvet",
+      "extraPrice": 4
+    },
+    {
+      "id": "ivory-satin",
+      "name": "Pure Ivory Satin",
+      "extraPrice": 0
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "none",
+    "name": "No Seal",
+    "icon": "do_not_disturb_on",
+    "color": "text-outline"
+  },
+  {
+    "id": "sky-bloom",
+    "name": "Sky Botanical Seal",
+    "icon": "spa",
+    "color": "text-primary"
+  },
+  {
+    "id": "monogram",
+    "name": "Flora Crest",
+    "icon": "verified",
+    "color": "text-[#b7965a]"
+  },
+  {
+    "id": "heart",
+    "name": "Wax Heart",
+    "icon": "favorite",
+    "color": "text-[#ba1a1a]"
+  }
+]

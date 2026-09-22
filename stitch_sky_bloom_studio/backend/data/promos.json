@@ -1,0 +1,30 @@
+[
+  {
+    "code": "FLORA10",
+    "discountPercent": 0.1,
+    "minSpend": 0,
+    "description": "10% off entire order",
+    "isActive": true
+  },
+  {
+    "code": "WELCOME10",
+    "discountPercent": 0.1,
+    "minSpend": 0,
+    "description": "10% welcome discount",
+    "isActive": true
+  },
+  {
+    "code": "AZURE20",
+    "discountPercent": 0.2,
+    "minSpend": 80,
+    "description": "20% off orders over $80",
+    "isActive": true
+  },
+  {
+    "code": "BLOOM15",
+    "discountPercent": 0.15,
+    "minSpend": 50,
+    "description": "15% off seasonal floral stems",
+    "isActive": true
+  }
+]

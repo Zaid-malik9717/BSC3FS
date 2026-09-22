@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FLORA - Build Your Bouquet</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e2e2e2",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed": "#0b1d2d",
+                    "on-tertiary-container": "#586166",
+                    "on-secondary-fixed-variant": "#38485a",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-bright": "#f9f9f9",
+                    "on-primary-fixed-variant": "#0f4c64",
+                    "surface-dim": "#dadada",
+                    "primary-fixed": "#c1e8ff",
+                    "on-background": "#1a1c1c",
+                    "surface": "#f9f9f9",
+                    "secondary-fixed-dim": "#b7c8de",
+                    "error": "#ba1a1a",
+                    "surface-container": "#eeeeee",
+                    "secondary": "#4f6073",
+                    "on-error-container": "#93000a",
+                    "outline": "#71787d",
+                    "surface-tint": "#2f647d",
+                    "on-primary-container": "#30667e",
+                    "inverse-primary": "#9acdea",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#d2e4fb",
+                    "on-surface-variant": "#41484c",
+                    "background": "#f9f9f9",
+                    "tertiary-fixed": "#dbe4ea",
+                    "on-tertiary-fixed": "#141d21",
+                    "surface-container-high": "#e8e8e8",
+                    "outline-variant": "#c0c7cd",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-primary": "#ffffff",
+                    "primary-fixed-dim": "#9acdea",
+                    "on-surface": "#1a1c1c",
+                    "on-tertiary-fixed-variant": "#3f484d",
+                    "tertiary": "#576065",
+                    "on-primary-fixed": "#001e2b",
+                    "inverse-on-surface": "#f0f1f1",
+                    "inverse-surface": "#2f3131",
+                    "secondary-fixed": "#d2e4fb",
+                    "tertiary-container": "#d3dce2",
+                    "primary-container": "#aee2ff",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#f3f3f4",
+                    "on-secondary-container": "#556679",
+                    "tertiary-fixed-dim": "#bfc8ce",
+                    "primary": "#2f647d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "section-gap": "120px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "display-lg-mobile": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-sm": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f9f9f9; }
+        .glass-panel { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .sky-glow { box-shadow: 0 32px 64px -12px rgba(26, 43, 60, 0.05); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Step transition animations */
+        .step-content { transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; }
+        .step-hidden { opacity: 0; pointer-events: none; position: absolute; transform: translateY(20px); }
+        .step-active { opacity: 1; pointer-events: auto; position: relative; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-surface/80 backdrop-blur-xl shadow-[0_32px_64px_-12px_rgba(26,43,60,0.05)] transition-all duration-300 ease-out">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Shop</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Fragrance</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Single Flowers</a>
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 font-body-md text-body-md" href="#">Custom</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Gift Notes</a>
+</div>
+<a class="font-display-lg text-display-lg-mobile md:text-display-lg tracking-tighter text-primary dark:text-primary-fixed-dim" href="#">FLORA</a>
+<div class="flex items-center gap-4">
+<button class="text-primary dark:text-primary-fixed-dim hover:scale-105 transition-transform duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</button>
+<button class="text-primary dark:text-primary-fixed-dim hover:scale-105 transition-transform duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+</button>
+<button class="text-primary dark:text-primary-fixed-dim hover:scale-105 transition-transform duration-300 hidden md:block">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-[100px] md:pt-[120px] pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full flex flex-col md:flex-row gap-gutter">
+<!-- Left Column: Controls -->
+<div class="w-full md:w-1/2 flex flex-col gap-8">
+<!-- Header & Steps -->
+<div>
+<h1 class="font-headline-md text-headline-md text-primary mb-2">Build Your Bouquet</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Create a personalized masterpiece, stem by stem.</p>
+<!-- Progress Indicator -->
+<div class="flex items-center gap-2 mb-8 overflow-x-auto hide-scrollbar pb-2">
+<button class="flex items-center gap-2 text-primary font-label-caps text-label-caps focus:outline-none" onclick="goToStep(1)">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center">1</div>
+<span class="whitespace-nowrap">FLOWER</span>
+</button>
+<div class="h-px bg-outline-variant flex-grow min-w-[20px]"></div>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary font-label-caps text-label-caps focus:outline-none transition-colors" onclick="goToStep(2)">
+<div class="w-6 h-6 rounded-full border border-outline-variant text-on-surface-variant flex items-center justify-center">2</div>
+<span class="whitespace-nowrap">COLOR</span>
+</button>
+<div class="h-px bg-outline-variant flex-grow min-w-[20px]"></div>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary font-label-caps text-label-caps focus:outline-none transition-colors" onclick="goToStep(3)">
+<div class="w-6 h-6 rounded-full border border-outline-variant text-on-surface-variant flex items-center justify-center">3</div>
+<span class="whitespace-nowrap">STYLE</span>
+</button>
+</div>
+</div>
+<!-- Step 1: Flower Type -->
+<div class="step-content step-active flex flex-col gap-4" id="step-1">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-2">Select Primary Flower</h2>
+<div class="grid grid-cols-2 gap-4">
+<!-- Option 1 -->
+<label class="cursor-pointer group">
+<input checked="" class="peer sr-only" name="flower" onchange="updatePreview()" type="radio" value="peony"/>
+<div class="bg-[#F0F9FF] rounded-lg p-4 border-2 border-transparent peer-checked:border-primary transition-all duration-300 hover:shadow-md h-full flex flex-col items-center text-center">
+<img class="w-24 h-24 object-cover rounded-full mb-3 group-hover:scale-105 transition-transform duration-300" data-alt="A macro shot of a delicate, soft pink peony in full bloom, captured in bright, natural studio lighting against a clean white background. High-end floral photography style, fresh and airy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeh4OFl9wtyH5wLOvkVWbk_Mfce5A3idxhEsspqVgpb-pY57faXtKdc2vD9A9YAh6aO-Xp1q3kRbEfkPLKQVPZEIrUdXDwV8wbXq4OWDnjQUPEzRwIOMDBbkvtyWpi7RZvI4OObfGxXhRnVV39t2e3-6WSt0uM_Ni_V9qsbxozzV7esQIjXR8H1WMX3_K6AUmAeNDfyTo8Ir1yq__SryQ5VE8opwgodEDm4AAg5vQcN6ikEjGcKYyRtw"/>
+<span class="font-body-md text-body-md font-semibold text-primary">Peony</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-1">Lush &amp; Romantic</span>
+</div>
+</label>
+<!-- Option 2 -->
+<label class="cursor-pointer group">
+<input class="peer sr-only" name="flower" onchange="updatePreview()" type="radio" value="rose"/>
+<div class="bg-[#F0F9FF] rounded-lg p-4 border-2 border-transparent peer-checked:border-primary transition-all duration-300 hover:shadow-md h-full flex flex-col items-center text-center">
+<img class="w-24 h-24 object-cover rounded-full mb-3 group-hover:scale-105 transition-transform duration-300" data-alt="A close-up of a pristine white garden rose with intricate petal layers, isolated on a bright, minimalist background. Premium, elegant floral aesthetic with soft, diffused lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8KUiz6tW92kU_VSGTDAJOYIU0ouJxLQawaUmXchm0F5SpdoRwWsu6BuS_hBk8sX1dt3CVtob0v96yFLEsM_PxixiOsDzFtO7DTPF9CannLSnjuPKQwLg7yZrUDY98I4jurjVs1Fq405kh4e5hf0GY2cKxfxG2vi-orH4bvVwOWFcLH0ep8dtYs3e3JloLh20CpyhZdry-ymF6QHlM9RCJXOnspCejJgiR4q-oZi872fGJKhXtFJZSYg"/>
+<span class="font-body-md text-body-md font-semibold text-primary">Garden Rose</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-1">Classic &amp; Timeless</span>
+</div>
+</label>
+</div>
+<div class="mt-6 flex justify-end">
+<button class="bg-primary-container text-on-primary-container font-body-md text-body-md px-6 py-3 rounded-full hover:scale-105 transition-transform duration-300 flex items-center gap-2" onclick="goToStep(2)">
+                        Next Step
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Step 2: Color (Hidden initially) -->
+<div class="step-content step-hidden flex flex-col gap-4" id="step-2">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-2">Choose Palette</h2>
+<div class="flex flex-wrap gap-3">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="color" onchange="updatePreview()" type="radio" value="blush"/>
+<div class="w-12 h-12 rounded-full border-2 border-transparent peer-checked:border-primary peer-checked:scale-110 transition-all duration-200" style="background: linear-gradient(135deg, #FFD1DC 0%, #FFB6C1 100%);"></div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="color" onchange="updatePreview()" type="radio" value="cream"/>
+<div class="w-12 h-12 rounded-full border-2 border-transparent peer-checked:border-primary peer-checked:scale-110 transition-all duration-200" style="background: linear-gradient(135deg, #FFFDD0 0%, #F5F5DC 100%); shadow-sm"></div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="color" onchange="updatePreview()" type="radio" value="lilac"/>
+<div class="w-12 h-12 rounded-full border-2 border-transparent peer-checked:border-primary peer-checked:scale-110 transition-all duration-200" style="background: linear-gradient(135deg, #E6E6FA 0%, #D8BFD8 100%);"></div>
+</label>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary mt-6 mb-2">Bouquet Size</h2>
+<div class="flex flex-col gap-3">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="size" onchange="updatePreview()" type="radio" value="standard"/>
+<div class="bg-surface rounded-lg p-4 border border-outline-variant peer-checked:border-primary peer-checked:bg-[#F0F9FF] transition-all flex justify-between items-center">
+<span class="font-body-md text-body-md text-primary">Standard (12 Stems)</span>
+<span class="font-body-md text-body-md text-on-surface-variant">+$0</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="size" onchange="updatePreview()" type="radio" value="grand"/>
+<div class="bg-surface rounded-lg p-4 border border-outline-variant peer-checked:border-primary peer-checked:bg-[#F0F9FF] transition-all flex justify-between items-center">
+<span class="font-body-md text-body-md text-primary">Grand (24 Stems)</span>
+<span class="font-body-md text-body-md text-on-surface-variant">+$45</span>
+</div>
+</label>
+</div>
+<div class="mt-6 flex justify-between">
+<button class="text-on-surface-variant hover:text-primary font-body-md text-body-md px-4 py-2 transition-colors" onclick="goToStep(1)">Back</button>
+<button class="bg-primary-container text-on-primary-container font-body-md text-body-md px-6 py-3 rounded-full hover:scale-105 transition-transform duration-300 flex items-center gap-2" onclick="goToStep(3)">
+                        Next Step
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Step 3: Style (Hidden initially) -->
+<div class="step-content step-hidden flex flex-col gap-4" id="step-3">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-2">Wrapping Style</h2>
+<div class="grid grid-cols-2 gap-4">
+<label class="cursor-pointer group">
+<input checked="" class="peer sr-only" name="wrap" onchange="updatePreview()" type="radio" value="paper"/>
+<div class="bg-[#F0F9FF] rounded-lg p-4 border-2 border-transparent peer-checked:border-primary transition-all text-center">
+<span class="font-body-md text-body-md font-semibold text-primary">Kraft Paper</span>
+</div>
+</label>
+<label class="cursor-pointer group">
+<input class="peer sr-only" name="wrap" onchange="updatePreview()" type="radio" value="vase"/>
+<div class="bg-[#F0F9FF] rounded-lg p-4 border-2 border-transparent peer-checked:border-primary transition-all text-center">
+<span class="font-body-md text-body-md font-semibold text-primary">Glass Vase (+$15)</span>
+</div>
+</label>
+</div>
+<div class="mt-6 flex justify-between">
+<button class="text-on-surface-variant hover:text-primary font-body-md text-body-md px-4 py-2 transition-colors" onclick="goToStep(2)">Back</button>
+<button class="bg-primary text-on-primary font-body-md text-body-md px-8 py-3 rounded-full hover:scale-105 transition-transform duration-300 flex items-center gap-2 shadow-lg">
+                        Add to Cart - <span id="price-display">$85</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Live Preview -->
+<div class="w-full md:w-1/2 sticky top-[120px] h-fit">
+<div class="bg-white rounded-xl sky-glow p-6 aspect-square md:aspect-[4/5] flex flex-col relative overflow-hidden">
+<!-- Background decorative element -->
+<div class="absolute inset-0 bg-gradient-to-br from-primary-fixed/20 to-transparent z-0 rounded-xl"></div>
+<div class="relative z-10 flex justify-between items-start w-full">
+<span class="font-label-caps text-label-caps text-on-surface-variant">LIVE PREVIEW</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+</div>
+<!-- Preview Image Container -->
+<div class="relative flex-grow flex items-center justify-center z-10 w-full h-full my-4">
+<!-- Default State Image -->
+<img class="w-full h-full object-contain drop-shadow-2xl transition-all duration-500 transform hover:scale-105" data-alt="A beautiful, custom-arranged bouquet of fresh blush pink peonies wrapped in elegant minimalist kraft paper, tied with a subtle silk ribbon. Photographed against a pristine white background with soft, airy natural light, evoking a premium luxury lifestyle aesthetic." id="preview-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFD2X5GyQkRZyqXjJWluOoGkiew8x1LRkHu7xmkbaXXFAuFbnbTaNnOB_qHyuNloAaSdGqaD0cFbIHw0G2LRVj-39mlWegkzq4ilUdpSF2U-7gvBoUTC3fdblgv_7CUMcJ-r1hfJD6_PHCHWH-PVneUoGDFUXGph38H9q3ze_wRPAUmjtpoE4Uizppvdbhx66Ep7ypc_w8tRXzp5dw5WWTzohQcwuPYWSYAi78aFAuuf3x2rldIjBezQ"/>
+</div>
+<div class="relative z-10 mt-auto bg-surface/80 backdrop-blur-md rounded-lg p-4 flex justify-between items-center border border-surface-variant">
+<div>
+<div class="font-body-lg text-body-lg font-semibold text-primary" id="preview-title">The Blush Peony</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-sm" id="preview-desc">Standard Size • Kraft Wrap</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-lg bg-surface-container-low dark:bg-surface-dim mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+<div class="flex flex-col gap-4">
+<span class="font-display-lg text-headline-md text-primary dark:text-primary-fixed-dim">FLORA</span>
+<span class="font-body-md text-body-md text-on-surface-variant">© 2024 FLORA EDITIONS. ALL RIGHTS RESERVED.</span>
+</div>
+<div class="flex flex-col gap-3">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:opacity-70 transition-opacity duration-200" href="#">Our Story</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:opacity-70 transition-opacity duration-200" href="#">Shipping</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:opacity-70 transition-opacity duration-200" href="#">Sustainability</a>
+</div>
+<div class="flex flex-col gap-3">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:opacity-70 transition-opacity duration-200" href="#">Press</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:opacity-70 transition-opacity duration-200" href="#">Contact</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple step navigation logic
+        function goToStep(stepNumber) {
+            // Hide all steps
+            document.querySelectorAll('.step-content').forEach(el => {
+                el.classList.remove('step-active');
+                el.classList.add('step-hidden');
+            });
+            
+            // Show target step
+            const targetStep = document.getElementById(`step-${stepNumber}`);
+            if(targetStep) {
+                targetStep.classList.remove('step-hidden');
+                targetStep.classList.add('step-active');
+            }
+            
+            // Update progress indicators (visual hack for demo)
+            const indicators = document.querySelectorAll('.flex.items-center.gap-2.mb-8 > button > div');
+            indicators.forEach((indicator, index) => {
+                if(index + 1 === stepNumber) {
+                    indicator.className = "w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center";
+                    indicator.parentElement.classList.replace('text-on-surface-variant', 'text-primary');
+                } else if(index + 1 < stepNumber) {
+                    indicator.className = "w-6 h-6 rounded-full bg-primary-container text-primary flex items-center justify-center";
+                    indicator.parentElement.classList.replace('text-on-surface-variant', 'text-primary');
+                } else {
+                    indicator.className = "w-6 h-6 rounded-full border border-outline-variant text-on-surface-variant flex items-center justify-center";
+                    indicator.parentElement.classList.replace('text-primary', 'text-on-surface-variant');
+                }
+            });
+        }
+
+        // Mock update logic for preview
+        function updatePreview() {
+            const basePrice = 85;
+            let currentPrice = basePrice;
+            
+            const size = document.querySelector('input[name="size"]:checked').value;
+            const wrap = document.querySelector('input[name="wrap"]:checked').value;
+            const flower = document.querySelector('input[name="flower"]:checked').value;
+            const color = document.querySelector('input[name="color"]:checked').value;
+            
+            if(size === 'grand') currentPrice += 45;
+            if(wrap === 'vase') currentPrice += 15;
+            
+            document.getElementById('price-display').innerText = `$${currentPrice}`;
+            
+            // Update title based on selection
+            const titleElement = document.getElementById('preview-title');
+            const flowerName = flower.charAt(0).toUpperCase() + flower.slice(1);
+            const colorName = color.charAt(0).toUpperCase() + color.slice(1);
+            titleElement.innerText = `The ${colorName} ${flowerName}`;
+            
+            const descElement = document.getElementById('preview-desc');
+            const sizeName = size.charAt(0).toUpperCase() + size.slice(1);
+            const wrapName = wrap === 'paper' ? 'Kraft Wrap' : 'Glass Vase';
+            descElement.innerText = `${sizeName} Size • ${wrapName}`;
+            
+            // Add a little bounce effect to preview image to simulate update
+            const img = document.getElementById('preview-image');
+            img.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                img.style.transform = 'scale(1)';
+            }, 150);
+        }
+    </script>
+</body></html>

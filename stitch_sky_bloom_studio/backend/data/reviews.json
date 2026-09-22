@@ -1,0 +1,38 @@
+[
+  {
+    "id": "rev-1",
+    "productId": "cloud-blue-hydrangea",
+    "userName": "Elena R.",
+    "rating": 5,
+    "date": "2026-08-28",
+    "comment": "The petals arrived so fresh and hydrated! The azure tone is even prettier in person.",
+    "verifiedPurchase": true
+  },
+  {
+    "id": "rev-2",
+    "productId": "celestial-white-peony",
+    "userName": "Marcus V.",
+    "rating": 5,
+    "date": "2026-08-25",
+    "comment": "Bloomed beautifully over 3 days. Scent was subtle and divine.",
+    "verifiedPurchase": true
+  },
+  {
+    "id": "rev-3",
+    "productId": "azure-dream-arrangement",
+    "userName": "Sophia L.",
+    "rating": 5,
+    "date": "2026-08-30",
+    "comment": "Stunning centerpiece for our dinner party. Guests wouldn't stop complimenting it!",
+    "verifiedPurchase": true
+  },
+  {
+    "id": "rev-1788842359840-bz6nt",
+    "productId": "cloud-blue-hydrangea",
+    "userName": "Claire B.",
+    "rating": 5,
+    "date": "2026-09-08",
+    "comment": "Absolutely stunning arrangement! Arrived in chilled packaging.",
+    "verifiedPurchase": true
+  }
+]
